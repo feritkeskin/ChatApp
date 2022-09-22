@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ChatApp</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="type_message">Type Message</string>
+    <string name="label_sing_up">Sing Up</string>
+    <string name="btn_sing_up">Sing Up</string>
+    <string name="btn_save">Kaydet</string>
+    <string name="exit">Çıkış yap</string>
+    <string name="delete">Hesabımı Sil</string>
+    <string name="label_sing_in">Sing In</string>
+    <string name="label_message">Mesaj</string>
+    <string name="label_ChatApp">ChatAppp</string>
+    <string name="label_hesabım">Hesabım</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_confirm_password">Enter confirm password</string>
+</resources>
