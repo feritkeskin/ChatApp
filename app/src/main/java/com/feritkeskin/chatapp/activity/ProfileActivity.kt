@@ -97,7 +97,6 @@ class ProfileActivity : AppCompatActivity() {
             }
             false
         }
-
     }
 
     private fun chooseImage() {
