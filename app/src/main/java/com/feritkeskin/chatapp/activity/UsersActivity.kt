@@ -39,22 +39,6 @@ class UsersActivity : AppCompatActivity() {
         binding.userRecyclerView.layoutManager =
             LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        /*
-        binding.imgBack.setOnClickListener {
-
-        //Kodu çalıştırma gereği duyunca MXL yapıştırmam yeterli olacaktır.
-        <ImageView
-            android:id="@+id/imgBack"
-            android:layout_width="0dp"
-            android:layout_height="32dp"
-            android:layout_weight="0.5"
-            android:padding="5dp"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/ic_back"/>
-
-        }
-         */
-
         binding.imgProfile.setOnClickListener {
             val intent = Intent(this@UsersActivity, ProfileActivity::class.java)
             startActivity(intent)

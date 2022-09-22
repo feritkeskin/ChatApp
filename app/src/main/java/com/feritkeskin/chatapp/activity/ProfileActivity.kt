@@ -51,7 +51,6 @@ class ProfileActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val user = snapshot.getValue(User::class.java)
 
-                println("user image for profil sayfasi: ${user?.profileImage}")
                 binding.etUserName.setText(user?.userName.toString())
 
                 if (user?.profileImage == "") {
@@ -139,15 +138,13 @@ class ProfileActivity : AppCompatActivity() {
                     }
                 }
                 .addOnFailureListener {
-                    println("Burak başarısız")
                     binding.progressBar.visibility = View.GONE
                     Toast.makeText(applicationContext, "Failed" + it.message, Toast.LENGTH_SHORT)
                         .show()
-
                 }
 
         } else {
-            println("Burak filePath boş")
+            binding.progressBar.visibility = View.GONE
         }
     }
 }
