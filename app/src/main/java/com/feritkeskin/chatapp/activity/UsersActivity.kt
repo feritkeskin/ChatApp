@@ -24,6 +24,8 @@ class UsersActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityUsersBinding
     var userList = ArrayList<User>()
+    private var firebaseUser: FirebaseUser? = null
+    private lateinit var mDatabaseReference: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,6 +87,24 @@ class UsersActivity : AppCompatActivity() {
 
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(applicationContext, error.message, Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
+        firebaseUser = FirebaseAuth.getInstance().currentUser!!
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference("users").child(firebaseUser?.uid.orEmpty())
+        mDatabaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val user = snapshot.getValue(User::class.java)
+                if (user?.profileImage == "") {
+                    binding.imgProfile.setImageResource(R.drawable.profile_image)
+                } else {
+                    Glide.with(this@UsersActivity).load(user?.profileImage).into(binding.imgProfile)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                println("Anaa hata çıktı :( ${error.message}")
             }
 
         })
