@@ -42,7 +42,6 @@ class SingUpActivity : AppCompatActivity() {
             } else {
                 mAuth.createUserWithEmailAndPassword(email, sifre)
                     .addOnSuccessListener { uuid ->
-                        //başla
                         println("Not user info: ${uuid.user?.uid.orEmpty()}, $uyeAdSoyad")
                         val hashMap: HashMap<String, String> = HashMap()
                         hashMap.put("userId", uuid.user?.uid.orEmpty())//girisYeniUyelik.toString()

@@ -10,8 +10,6 @@ import com.google.firebase.auth.FirebaseUser
 
 class LoginActivity : AppCompatActivity() {
 
-    //<color name="buttonColor">#813fd7</color>
-
     private lateinit var binding: ActivityLoginBinding
     private var auth: FirebaseAuth? = null
     private var firebaseUser: FirebaseUser? = null
