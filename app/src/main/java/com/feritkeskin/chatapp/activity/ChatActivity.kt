@@ -46,7 +46,6 @@ class ChatActivity : AppCompatActivity() {
         binding.chatRecyclerView.layoutManager =
             LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-        //Yazan kişi
         databaseReference =
             FirebaseDatabase.getInstance().getReference("users").child(firebaseUser?.uid.orEmpty())
         databaseReference.addValueEventListener(object : ValueEventListener {
