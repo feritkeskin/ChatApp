@@ -19,8 +19,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_chat.*
-import kotlinx.android.synthetic.main.activity_users.imgProfile
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -76,11 +74,11 @@ class ChatActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 val user = snapshot.getValue(User::class.java)
-                tvUserName.text = user?.userName
+                binding.tvUserName.text = user?.userName
                 if (user?.profileImage == "") {
-                    imgProfile.setImageResource(R.drawable.profile_image)
+                    binding.imgProfile.setImageResource(R.drawable.profile_image)
                 } else {
-                    Glide.with(this@ChatActivity).load(user?.profileImage).into(imgProfile)
+                    Glide.with(this@ChatActivity).load(user?.profileImage).into(binding.imgProfile)
 
                 }
             }
@@ -92,15 +90,15 @@ class ChatActivity : AppCompatActivity() {
         })
 
         binding.btnSendMessage.setOnClickListener {
-            val message: String = etMessage.text.toString()
+            val message: String = binding.etMessage.text.toString()
 
             if (message.isEmpty()) {
                 Toast.makeText(applicationContext, "Mesaj boş bırakılamaz..!", Toast.LENGTH_SHORT)
                     .show()
-                etMessage.setText("")
+                binding.etMessage.setText("")
             } else {
                 sendMessage(firebaseUser!!.uid, userId, message)
-                etMessage.setText("")
+                binding.etMessage.setText("")
                 topic = "/topics/$userId"
                 PushNotification(
                     NotificationData(userName!!, message),
@@ -150,8 +148,8 @@ class ChatActivity : AppCompatActivity() {
 
                 val chatAdapter = ChatAdapter(this@ChatActivity, chatList)
 
-                chatRecyclerView.adapter = chatAdapter
-                chatRecyclerView.scrollToPosition(chatList.size-1)
+                binding.chatRecyclerView.adapter = chatAdapter
+                binding.chatRecyclerView.scrollToPosition(chatList.size-1)
             }
 
             override fun onCancelled(error: DatabaseError) {

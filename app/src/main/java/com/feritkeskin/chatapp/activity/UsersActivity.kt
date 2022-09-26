@@ -18,7 +18,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.google.firebase.installations.FirebaseInstallations
 import com.google.firebase.messaging.FirebaseMessaging
-import kotlinx.android.synthetic.main.activity_users.*
 
 class UsersActivity : AppCompatActivity() {
 
@@ -52,7 +51,7 @@ class UsersActivity : AppCompatActivity() {
         val firebase: FirebaseUser? = FirebaseAuth.getInstance().currentUser
 
         val userid = firebase?.uid
-        println("burak auth" + userid)
+        println("ferit auth" + userid)
         FirebaseMessaging.getInstance().subscribeToTopic("/topics/$userid")
 
         val databaseReference: DatabaseReference =
@@ -64,9 +63,9 @@ class UsersActivity : AppCompatActivity() {
                 userList.clear()
                 val currentUser = snapshot.getValue(User::class.java)
                 if (currentUser?.profileImage == "") {
-                    imgProfile.setImageResource(R.drawable.profile_image)
+                    binding.imgProfile.setImageResource(R.drawable.profile_image)
                 } else {
-                    Glide.with(this@UsersActivity).load(currentUser?.profileImage).into(imgProfile)
+                    Glide.with(this@UsersActivity).load(currentUser?.profileImage).into(binding.imgProfile)
 
                 }
 
@@ -104,7 +103,7 @@ class UsersActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                println("Anaa hata çıktı :( ${error.message}")
+                println("Hata çıktı ${error.message}")
             }
 
         })
