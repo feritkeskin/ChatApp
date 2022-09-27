@@ -49,7 +49,7 @@ class ChatActivity : AppCompatActivity() {
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val user = snapshot.getValue(User::class.java)
-                println("Merhaba bu kullanici fotosu: ${user?.profileImage}")
+                println("kullanici fotosu: ${user?.profileImage}")
 
             }
 
