@@ -17,8 +17,20 @@ class DeleteAccountActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDeleteAccountBinding.inflate(layoutInflater)
         val view = binding.root
+
+
         binding.deleteButton.setOnClickListener {
-            deleteAccount()
+            //Alert Uyarı Bildirimi
+            val alert = android.app.AlertDialog.Builder(this)
+            alert.setTitle("Hesabımı Kalıcı Olarak Sil")
+            alert.setMessage("Hesabını Silmek İstediğine Emin Misin?")
+            alert.setPositiveButton("Evet") {dialog, which ->
+                deleteAccount()
+            }
+            alert.setNegativeButton("Hayır") {dialog, which ->
+                Toast.makeText(applicationContext, "Hesap Silme Başarısız!!", Toast.LENGTH_SHORT).show()
+            }
+            alert.show()
         }
         setContentView(view)
     }
