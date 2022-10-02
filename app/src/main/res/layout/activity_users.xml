@@ -15,29 +15,29 @@
         android:orientation="horizontal">
 
 
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/label_ChatApp"
-            android:textStyle="bold"
-            android:padding="5dp"
             android:fontFamily="@font/gilroy_bold"
+            android:padding="5dp"
+            android:text="@string/label_ChatApp"
             android:textColor="@color/black"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgProfile"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="10dp"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/ic_launcher" />
 
     </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/userRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

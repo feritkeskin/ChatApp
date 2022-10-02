@@ -18,30 +18,30 @@
             android:id="@+id/imgBack"
             android:layout_width="0dp"
             android:layout_height="32dp"
+            android:layout_marginStart="10dp"
             android:layout_weight="0.5"
             android:padding="5dp"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/ic_back"/>
+            android:src="@drawable/ic_back" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgProfile"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_weight="0.5"
             android:layout_margin="10dp"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_weight="0.5"
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tvUserName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text=""
-            android:paddingEnd="0dp"
-            android:textStyle="bold"
             android:fontFamily="@font/gilroy_bold"
+            android:paddingEnd="0dp"
+            android:text=""
             android:textColor="@color/black"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -50,8 +50,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/r1"
-        android:paddingBottom="5dp"
-        android:layout_below="@+id/l1" />
+        android:layout_below="@+id/l1"
+        android:paddingBottom="5dp" />
 
     <RelativeLayout
         android:id="@+id/r1"
@@ -67,24 +67,24 @@
 
             <EditText
                 android:id="@+id/etMessage"
-                android:textColor="@android:color/black"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/edittextarkaplan"
                 android:fontFamily="@font/gilroy_light"
                 android:hint="@string/type_message"
                 android:inputType="text"
                 android:padding="12dp"
-                android:textColorHint="@color/hintText"/>
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/hintText" />
 
             <ImageButton
                 android:id="@+id/btnSendMessage"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/ic_send"
                 android:background="@drawable/arkaplanbuttton"
-                android:backgroundTint="@color/buttonColor"/>
+                android:backgroundTint="@color/buttonColor"
+                android:src="@drawable/ic_send" />
 
         </LinearLayout>
 

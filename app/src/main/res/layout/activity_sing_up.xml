@@ -36,7 +36,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/uyeEmail"
@@ -107,11 +107,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/arkaplanbuttton"
+        android:padding="15dp"
         android:text="Kaydet"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        android:padding="15dp"
         app:layout_constraintBottom_toTopOf="@+id/uyeParola"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

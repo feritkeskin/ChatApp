@@ -19,18 +19,18 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/userImage"
             android:layout_width="30dp"
-            android:visibility="gone"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="5dp"
-            android:src="@drawable/profile_image" />
+            android:src="@drawable/profile_image"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tvMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="60dp"
             android:background="@drawable/item_left_side_background"
             android:fontFamily="@font/gilroy_light"

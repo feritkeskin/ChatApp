@@ -65,7 +65,8 @@ class UsersActivity : AppCompatActivity() {
                 if (currentUser?.profileImage == "") {
                     binding.imgProfile.setImageResource(R.drawable.profile_image)
                 } else {
-                    Glide.with(this@UsersActivity).load(currentUser?.profileImage).into(binding.imgProfile)
+                    Glide.with(this@UsersActivity).load(currentUser?.profileImage)
+                        .into(binding.imgProfile)
 
                 }
 
@@ -91,7 +92,8 @@ class UsersActivity : AppCompatActivity() {
         })
 
         firebaseUser = FirebaseAuth.getInstance().currentUser!!
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference("users").child(firebaseUser?.uid.orEmpty())
+        mDatabaseReference =
+            FirebaseDatabase.getInstance().getReference("users").child(firebaseUser?.uid.orEmpty())
         mDatabaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val user = snapshot.getValue(User::class.java)

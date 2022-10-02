@@ -56,7 +56,8 @@ class ProfileActivity : AppCompatActivity() {
                 if (user?.profileImage == "") {
                     binding.userImage.setImageResource(R.drawable.profile_image)
                 } else {
-                    Glide.with(this@ProfileActivity).load(user?.profileImage).into(binding.userImage)
+                    Glide.with(this@ProfileActivity).load(user?.profileImage)
+                        .into(binding.userImage)
                 }
             }
 
@@ -128,12 +129,13 @@ class ProfileActivity : AppCompatActivity() {
             ref.putFile(filePath!!)
                 .addOnSuccessListener {
                     ref.downloadUrl.addOnCompleteListener {
-                        val hashMap:HashMap<String,String> = HashMap()
+                        val hashMap: HashMap<String, String> = HashMap()
                         hashMap.put("userName", binding.etUserName.text.toString())
                         hashMap.put("profileImage", it.result.toString())
                         databaseReference.updateChildren(hashMap as Map<String, String>)
                         binding.progressBar.visibility = View.GONE
-                        Toast.makeText(applicationContext, "Kayıt Başarılı", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "Kayıt Başarılı", Toast.LENGTH_SHORT)
+                            .show()
                         binding.saveButton.visibility = View.GONE
                     }
                 }

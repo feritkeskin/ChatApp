@@ -26,7 +26,8 @@ class UserAdapter(private val context: Context, private val userList: ArrayList<
         val user = userList[position]
         holder.txtUserName.text = user.userName
         println("user image for liste sayfasi: ${user.profileImage}")
-        Glide.with(context).load(user.profileImage).placeholder(R.drawable.profile_image).into(holder.imgUser)
+        Glide.with(context).load(user.profileImage).placeholder(R.drawable.profile_image)
+            .into(holder.imgUser)
 
 
         holder.layoutUser.setOnClickListener {

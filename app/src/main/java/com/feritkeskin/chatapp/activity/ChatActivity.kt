@@ -149,7 +149,7 @@ class ChatActivity : AppCompatActivity() {
                 val chatAdapter = ChatAdapter(this@ChatActivity, chatList)
 
                 binding.chatRecyclerView.adapter = chatAdapter
-                binding.chatRecyclerView.scrollToPosition(chatList.size-1)
+                binding.chatRecyclerView.scrollToPosition(chatList.size - 1)
             }
 
             override fun onCancelled(error: DatabaseError) {
