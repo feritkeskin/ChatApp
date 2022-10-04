@@ -79,7 +79,6 @@ class ChatActivity : AppCompatActivity() {
                     binding.imgProfile.setImageResource(R.drawable.profile_image)
                 } else {
                     Glide.with(this@ChatActivity).load(user?.profileImage).into(binding.imgProfile)
-
                 }
             }
 
@@ -90,6 +89,7 @@ class ChatActivity : AppCompatActivity() {
         })
 
         binding.btnSendMessage.setOnClickListener {
+
             val message: String = binding.etMessage.text.toString()
 
             if (message.isEmpty()) {
@@ -113,6 +113,7 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun sendMessage(senderId: String, receiverId: String, message: String) {
+
         val reference: DatabaseReference? = FirebaseDatabase.getInstance().getReference()
 
         val hashMap: HashMap<String, String> = HashMap()
