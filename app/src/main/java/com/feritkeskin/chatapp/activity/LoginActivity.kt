@@ -23,8 +23,10 @@ class LoginActivity : AppCompatActivity() {
         firebaseUser = auth?.currentUser
 
         binding.girisYapButton.setOnClickListener {
+
             val email = binding.girisEmail.text.toString()
             val sifre = binding.girisParola.text.toString()
+
             if (sifre.isNullOrEmpty() && email.isNullOrEmpty()) {
                 Toast.makeText(this, "Email ve Şifre boş bırakılamaz", Toast.LENGTH_SHORT).show()
             } else if (sifre.isNullOrEmpty()) {

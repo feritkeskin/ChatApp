@@ -49,6 +49,7 @@ class DeleteAccountActivity : AppCompatActivity() {
         } else if (deleteEmail.isNullOrEmpty()) {
             Toast.makeText(this, "Email boş bırakılamaz", Toast.LENGTH_SHORT).show()
         } else {
+
             val user = FirebaseAuth.getInstance().currentUser
             val credential: AuthCredential =
                 EmailAuthProvider.getCredential(deleteEmail, deletePassword)

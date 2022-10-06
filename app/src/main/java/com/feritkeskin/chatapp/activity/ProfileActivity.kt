@@ -49,6 +49,7 @@ class ProfileActivity : AppCompatActivity() {
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+
                 val user = snapshot.getValue(User::class.java)
 
                 binding.etUserName.setText(user?.userName.toString())
