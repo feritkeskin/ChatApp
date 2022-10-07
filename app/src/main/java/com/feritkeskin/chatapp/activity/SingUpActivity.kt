@@ -36,7 +36,7 @@ class SingUpActivity : AppCompatActivity() {
             } else if (sifre.isEmpty()) {
                 Toast.makeText(this, "Şifre boş bırakılamaz", Toast.LENGTH_SHORT).show()
             } else if (email.isEmpty()) {
-                Toast.makeText(this, "Email boş bırakılamaz", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "E-mail boş bırakılamaz", Toast.LENGTH_SHORT).show()
             } else if (uyeAdSoyad.isEmpty()) {
                 Toast.makeText(this, "Üye adı Soyadı boş bırakılamaz", Toast.LENGTH_SHORT).show()
             } else {

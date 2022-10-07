@@ -21,18 +21,23 @@ class DeleteAccountActivity : AppCompatActivity() {
 
         binding.deleteButton.setOnClickListener {
 
-            //Alert Uyarı Bildirimi
-            val alert = android.app.AlertDialog.Builder(this)
-            alert.setTitle("Hesabımı Kalıcı Olarak Sil")
-            alert.setMessage("Hesabını Silmek İstediğine Emin Misin?")
-            alert.setPositiveButton("EVET") { dialog, which ->
-                deleteAccount()
+            if (binding.emailDelete.text == null || binding.passwordDelete.text == null){
+                //Alert Uyarı Bildirimi
+                val alert = android.app.AlertDialog.Builder(this)
+                alert.setTitle("Hesabımı Kalıcı Olarak Sil")
+                alert.setMessage("Hesabını Silmek İstediğine Emin Misin?")
+                alert.setPositiveButton("EVET") { dialog, which ->
+                    deleteAccount()
+                }
+                alert.setNegativeButton("HAYIR") { dialog, which ->
+                    Toast.makeText(applicationContext, "Hesap Silme Başarısız!!", Toast.LENGTH_SHORT)
+                        .show()
+                }
+                alert.show()
+            }else{
+                Toast.makeText(this@DeleteAccountActivity, "E-mail veya Şifre boş bırakılamaz!!", Toast.LENGTH_SHORT).show()
+
             }
-            alert.setNegativeButton("HAYIR") { dialog, which ->
-                Toast.makeText(applicationContext, "Hesap Silme Başarısız!!", Toast.LENGTH_SHORT)
-                    .show()
-            }
-            alert.show()
         }
         setContentView(view)
     }
@@ -43,11 +48,11 @@ class DeleteAccountActivity : AppCompatActivity() {
         val deletePassword = binding.passwordDelete.text.toString()
 
         if (deletePassword.isNullOrEmpty() && deleteEmail.isNullOrEmpty()) {
-            Toast.makeText(this, "Email ve Şifre boş bırakılamaz", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "E-mail ve Şifre boş bırakılamaz", Toast.LENGTH_SHORT).show()
         } else if (deletePassword.isNullOrEmpty()) {
             Toast.makeText(this, "Şifre boş bırakılamaz", Toast.LENGTH_SHORT).show()
         } else if (deleteEmail.isNullOrEmpty()) {
-            Toast.makeText(this, "Email boş bırakılamaz", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "E-mail boş bırakılamaz", Toast.LENGTH_SHORT).show()
         } else {
 
             val user = FirebaseAuth.getInstance().currentUser

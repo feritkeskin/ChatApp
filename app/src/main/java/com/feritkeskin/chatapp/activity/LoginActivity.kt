@@ -28,11 +28,11 @@ class LoginActivity : AppCompatActivity() {
             val sifre = binding.girisParola.text.toString()
 
             if (sifre.isNullOrEmpty() && email.isNullOrEmpty()) {
-                Toast.makeText(this, "Email ve Şifre boş bırakılamaz", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "E-mail ve Şifre boş bırakılamaz", Toast.LENGTH_SHORT).show()
             } else if (sifre.isNullOrEmpty()) {
                 Toast.makeText(this, "Şifre boş bırakılamaz", Toast.LENGTH_SHORT).show()
             } else if (email.isNullOrEmpty()) {
-                Toast.makeText(this, "Email boş bırakılamaz", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "E-mail boş bırakılamaz", Toast.LENGTH_SHORT).show()
             } else {
                 auth?.signInWithEmailAndPassword(email, sifre)
                     ?.addOnCompleteListener(this) {
