@@ -25,10 +25,10 @@ class DeleteAccountActivity : AppCompatActivity() {
             val alert = android.app.AlertDialog.Builder(this)
             alert.setTitle("Hesabımı Kalıcı Olarak Sil")
             alert.setMessage("Hesabını Silmek İstediğine Emin Misin?")
-            alert.setPositiveButton("Evet") { dialog, which ->
+            alert.setPositiveButton("EVET") { dialog, which ->
                 deleteAccount()
             }
-            alert.setNegativeButton("Hayır") { dialog, which ->
+            alert.setNegativeButton("HAYIR") { dialog, which ->
                 Toast.makeText(applicationContext, "Hesap Silme Başarısız!!", Toast.LENGTH_SHORT)
                     .show()
             }
