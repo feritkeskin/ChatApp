@@ -49,6 +49,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this, "Hata: ${it.message}", Toast.LENGTH_SHORT).show()
                     }
             }
+            Toast.makeText(applicationContext, "Hoşgeldin", Toast.LENGTH_SHORT).show()
         }
 
         binding.girisYeniUyelik.setOnClickListener {
