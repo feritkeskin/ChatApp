@@ -22,6 +22,8 @@ class DeleteAccountActivity : AppCompatActivity() {
         binding.deleteButton.setOnClickListener {
 
             if (binding.emailDelete.text == null || binding.passwordDelete.text == null){
+                Toast.makeText(this@DeleteAccountActivity, "E-mail veya Şifre boş bırakılamaz!!", Toast.LENGTH_SHORT).show()
+            }else{
                 //Alert Uyarı Bildirimi
                 val alert = android.app.AlertDialog.Builder(this)
                 alert.setTitle("Hesabımı Kalıcı Olarak Sil")
@@ -34,9 +36,6 @@ class DeleteAccountActivity : AppCompatActivity() {
                         .show()
                 }
                 alert.show()
-            }else{
-                Toast.makeText(this@DeleteAccountActivity, "E-mail veya Şifre boş bırakılamaz!!", Toast.LENGTH_SHORT).show()
-
             }
         }
         setContentView(view)
