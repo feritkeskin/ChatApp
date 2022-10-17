@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">ChatApp</string>
     <string name="enter_name">Enter Name</string>
     <string name="enter_email">Enter Email</string>
@@ -14,4 +15,5 @@
     <string name="label_hesabım">Hesabım</string>
     <string name="enter_password">Enter Password</string>
     <string name="enter_confirm_password">Enter confirm password</string>
+
 </resources>
