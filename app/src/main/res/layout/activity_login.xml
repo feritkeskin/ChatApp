@@ -48,7 +48,6 @@
         android:text="Yeni üyelik"
         android:textColor="@color/material_dynamic_neutral30"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/girisText2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/girisYapButton" />
@@ -58,7 +57,7 @@
         android:layout_width="359dp"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="141dp"
+        android:layout_marginTop="77dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:text="Üye olarak veya giriş yaparak Kullanım ve Gizlilik Koşullarını kabul etmiş sayılırsınız."
@@ -67,8 +66,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/girisYeniUyelik" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
         android:id="@+id/girisEmail"
