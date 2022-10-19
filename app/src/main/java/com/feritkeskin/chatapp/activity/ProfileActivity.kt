@@ -125,7 +125,7 @@ class ProfileActivity : AppCompatActivity() {
     private fun uploadImage() {
         if (filePath != null) {
 
-            var ref: StorageReference = stroageRef.child("image/" + UUID.randomUUID().toString())
+            val ref: StorageReference = stroageRef.child("image/" + UUID.randomUUID().toString())
 
             ref.putFile(filePath!!)
                 .addOnSuccessListener {
