@@ -67,16 +67,13 @@ class UsersActivity : AppCompatActivity() {
                 } else {
                     Glide.with(this@UsersActivity).load(currentUser?.profileImage)
                         .into(binding.imgProfile)
-
                 }
 
                 for (dataSnapShot: DataSnapshot in snapshot.children) {
                     val user = dataSnapShot.getValue(User::class.java)
 
                     if (!user!!.userId.equals(userid)) {
-
                         userList.add(user)
-
                     }
                 }
 
@@ -88,7 +85,6 @@ class UsersActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(applicationContext, error.message, Toast.LENGTH_SHORT).show()
             }
-
         })
 
         firebaseUser = FirebaseAuth.getInstance().currentUser!!
@@ -107,8 +103,6 @@ class UsersActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
                 println("Hata çıktı ${error.message}")
             }
-
         })
     }
-
 }
