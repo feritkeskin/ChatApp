@@ -100,11 +100,12 @@ class ChatActivity : AppCompatActivity() {
                 sendMessage(firebaseUser!!.uid, userId, message)
                 binding.etMessage.setText("")
                 topic = "/topics/$userId"
+                Log.d(this.javaClass.simpleName, "onCreate: topic: $topic, userName: $userName")
                 PushNotification(
                     NotificationData(userName!!, message),
                     topic
                 ).also {
-                    sendNotification(it)
+                    //sendNotification(it)
                 }
             }
         }
@@ -169,7 +170,7 @@ class ChatActivity : AppCompatActivity() {
                     Log.e("TAG", response.errorBody()!!.string())
                 }
             } catch (e: Exception) {
-                Log.e("TAG", e.toString())
+                Log.e("TAG", "sendNotification in the error: ${e.message}")
             }
         }
 }
