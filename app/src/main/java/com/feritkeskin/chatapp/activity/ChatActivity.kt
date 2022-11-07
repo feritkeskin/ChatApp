@@ -111,6 +111,7 @@ class ChatActivity : AppCompatActivity() {
         }
 
         readMessage(firebaseUser!!.uid, userId)
+
     }
 
     private fun sendMessage(senderId: String, receiverId: String, message: String) {
