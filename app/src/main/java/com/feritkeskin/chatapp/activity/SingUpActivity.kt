@@ -50,13 +50,13 @@ class SingUpActivity : AppCompatActivity() {
 
                         database.child("users").child(uuid.user?.uid.orEmpty()).setValue(hashMap)
                             .addOnSuccessListener {
+                                val intent = Intent(this@SingUpActivity, UsersActivity::class.java)
+                                startActivity(intent)
                                 Toast.makeText(
                                     this,
-                                    "Kayıt başarılı, Lütfen giriş yapınız",
+                                    "Kayıt başarılı, Hoşgeldin",
                                     Toast.LENGTH_SHORT
                                 ).show()
-                                val intent = Intent(this@SingUpActivity, LoginActivity::class.java)
-                                startActivity(intent)
                                 finish()
                             }
                             .addOnFailureListener {
