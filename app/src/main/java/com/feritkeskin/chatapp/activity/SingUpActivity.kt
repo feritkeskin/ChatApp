@@ -52,22 +52,16 @@ class SingUpActivity : AppCompatActivity() {
                         database.child("users").child(uuid.user?.uid.orEmpty()).setValue(hashMap)
                             .addOnSuccessListener {
                                 val intent = Intent(this@SingUpActivity, UsersActivity::class.java)
-                                startActivity(intent)
-                                finish()
                                 Toast.makeText(
                                     this,
                                     "Kayıt başarılı, Hoşgeldin",
                                     Toast.LENGTH_SHORT
                                 ).show()
-                            }
-                            .addOnFailureListener {
-                                Toast.makeText(
-                                    this,
-                                    "Veriler veritabanına kaydedilmesi!!! ${it.message}",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                                startActivity(intent)
+                                finish()
                             }
                     }
+
                     .addOnFailureListener {
                         Toast.makeText(this, "Kayıt hatalı ${it.message}", Toast.LENGTH_SHORT)
                             .show()

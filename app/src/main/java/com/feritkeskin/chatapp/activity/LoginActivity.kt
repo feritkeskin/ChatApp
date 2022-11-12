@@ -56,7 +56,6 @@ class LoginActivity : AppCompatActivity() {
         binding.girisYeniUyelik.setOnClickListener {
             val intent = Intent(this@LoginActivity, SingUpActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 }
