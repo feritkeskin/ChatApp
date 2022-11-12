@@ -42,7 +42,8 @@ class LoginActivity : AppCompatActivity() {
                             binding.girisParola.setText("")
                             val intent = Intent(this@LoginActivity, UsersActivity::class.java)
                             startActivity(intent)
-                            Toast.makeText(applicationContext, "Hoşgeldin", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext, "Hoşgeldin", Toast.LENGTH_SHORT)
+                                .show()
                             finish()
                         }
                     }

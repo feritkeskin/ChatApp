@@ -33,6 +33,7 @@ class SingUpActivity : AppCompatActivity() {
             if (sifre.isEmpty() && email.isEmpty() && uyeAdSoyad.isEmpty()) {
                 Toast.makeText(this, "Kullanıcı bilgileri boş bırakılamaz", Toast.LENGTH_SHORT)
                     .show()
+
             } else if (sifre.isEmpty()) {
                 Toast.makeText(this, "Şifre boş bırakılamaz", Toast.LENGTH_SHORT).show()
             } else if (email.isEmpty()) {
@@ -52,12 +53,12 @@ class SingUpActivity : AppCompatActivity() {
                             .addOnSuccessListener {
                                 val intent = Intent(this@SingUpActivity, UsersActivity::class.java)
                                 startActivity(intent)
+                                finish()
                                 Toast.makeText(
                                     this,
                                     "Kayıt başarılı, Hoşgeldin",
                                     Toast.LENGTH_SHORT
                                 ).show()
-                                finish()
                             }
                             .addOnFailureListener {
                                 Toast.makeText(

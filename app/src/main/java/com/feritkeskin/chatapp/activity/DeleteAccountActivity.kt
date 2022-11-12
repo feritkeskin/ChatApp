@@ -18,12 +18,16 @@ class DeleteAccountActivity : AppCompatActivity() {
         binding = ActivityDeleteAccountBinding.inflate(layoutInflater)
         val view = binding.root
 
-
         binding.deleteButton.setOnClickListener {
 
-            if (binding.emailDelete.text == null || binding.passwordDelete.text == null){
-                Toast.makeText(this@DeleteAccountActivity, "E-mail veya Şifre boş bırakılamaz!!", Toast.LENGTH_SHORT).show()
-            }else{
+            if (binding.emailDelete.text == null || binding.passwordDelete.text == null) {
+                Toast.makeText(
+                    this@DeleteAccountActivity,
+                    "E-mail veya Şifre boş bırakılamaz!!",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            } else {
                 //Alert Uyarı Bildirimi
                 val alert = android.app.AlertDialog.Builder(this)
                 alert.setTitle("Hesabımı Kalıcı Olarak Sil")
@@ -32,7 +36,11 @@ class DeleteAccountActivity : AppCompatActivity() {
                     deleteAccount()
                 }
                 alert.setNegativeButton("HAYIR") { dialog, which ->
-                    Toast.makeText(applicationContext, "Hesap Silme Başarısız!!", Toast.LENGTH_SHORT)
+                    Toast.makeText(
+                        applicationContext,
+                        "Hesap Silme Başarısız!!",
+                        Toast.LENGTH_SHORT
+                    )
                         .show()
                 }
                 alert.show()

@@ -34,7 +34,6 @@ class ChatActivity : AppCompatActivity() {
 
     private lateinit var databaseReference: DatabaseReference
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityChatBinding.inflate(layoutInflater)
@@ -50,7 +49,6 @@ class ChatActivity : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val user = snapshot.getValue(User::class.java)
                 println("kullanici fotosu: ${user?.profileImage}")
-
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -85,7 +83,6 @@ class ChatActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
         })
 
         binding.btnSendMessage.setOnClickListener {
@@ -160,18 +157,4 @@ class ChatActivity : AppCompatActivity() {
             }
         })
     }
-
-    private fun sendNotification(notification: PushNotification) =
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val response = RetrofitInstance.api.postNotification(notification)
-                if (response.isSuccessful) {
-                    Log.d("TAG", "Response: ${Gson().toJson(response)}")
-                } else {
-                    Log.e("TAG", response.errorBody()!!.string())
-                }
-            } catch (e: Exception) {
-                Log.e("TAG", "sendNotification in the error: ${e.message}")
-            }
-        }
 }

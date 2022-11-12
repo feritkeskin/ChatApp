@@ -1,6 +1,7 @@
 package com.feritkeskin.chatapp.Constants
 
 class Constants {
+
     companion object {
 
         const val BASE_URL = "https://fcm.googleapis.com"
