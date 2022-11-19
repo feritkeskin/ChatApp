@@ -58,7 +58,7 @@ class SingUpActivity : AppCompatActivity() {
                                     "Kayıt başarılı, Hoşgeldin",
                                     Toast.LENGTH_SHORT
                                 ).show()
-                                finish()
+                                finishAffinity()
                             }
                     }
 

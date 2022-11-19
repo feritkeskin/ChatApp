@@ -44,7 +44,6 @@ class ChatAdapter(private val context: Context, private val chatList: ArrayList<
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         val txtUserName: TextView = view.findViewById(R.id.tvMessage)
-        val imgUser: CircleImageView = view.findViewById(R.id.userImage)
     }
 
     override fun getItemViewType(position: Int): Int {
